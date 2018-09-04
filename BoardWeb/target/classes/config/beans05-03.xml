@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- 생성자를 이용한 constructor 인젝션  -->
+  <bean id="tv" class="polymorphism05.SamsungTV" p:speaker-ref="sony">
+  </bean>
+  
+  <bean id="sony" class="polymorphism05.SonySpeaker"></bean>
+
+
+</beans>

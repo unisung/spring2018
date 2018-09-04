@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="mb04" class="polymorphism04.MessageBenImpl">
+	  <property name="name"><value>홍길동</value></property>
+	  <property name="greet" value="방가여"></property>
+	</bean>
+	
+	<!-- 다른 설정파일을 import해서 사용 가능 -->
+	<import resource="beans03.xml"/>
+	
+</beans>

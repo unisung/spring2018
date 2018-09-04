@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="output" class="polymorphism07.FileOutput">
+	<property name="fileName" 
+	                 value="src/main/java/polymorphism07/vh.txt"/>
+</bean>
+
+<!-- constructor와 setter인젝션 함께 사용 -->
+<bean id="mb" class="polymorphism07.MessageBeanImpl">
+     <constructor-arg><value>car</value></constructor-arg>
+     <constructor-arg value="100"></constructor-arg>
+     <property name="output"><ref bean="output"/></property>
+</bean>
+
+</beans>

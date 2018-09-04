@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+ 
+  <bean  id="hello" class="polymorphism.Hello">
+     <property name="name" value="Spring" />
+     <property name="printer" ref="consolePrinter"/><!-- 필드가 객체인 경우 ref=아이디로 참조  -->
+  </bean>
+
+   <bean  id="printer"  class="polymorphism.StringPrinter"/>
+   <bean id="consolePrinter" class="polymorphism.ConsolePrinter"/>
+
+</beans>

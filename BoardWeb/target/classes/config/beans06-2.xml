@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- setter메소드를  이용한 인젝션은 반드시 기본생성자 존재해야함  -->
+  <bean id="tv" class="polymorphism06.SamsungTV">
+     <property name="speaker" ref="sony" />
+     <property name="price" value="2700000"></property>
+  </bean>
+  
+  <bean id="sony" class="polymorphism06.SonySpeaker"></bean>
+
+</beans>

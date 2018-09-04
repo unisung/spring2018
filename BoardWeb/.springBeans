@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.5.201807030714-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+		<config>src/main/resources/applicationContext.xml</config>
+		<config>src/main/java/config/beans01.xml</config>
+		<config>src/main/java/config/beans02.xml</config>
+		<config>src/main/java/config/beans03.xml</config>
+		<config>src/main/java/config/beans04.xml</config>
+		<config>src/main/java/config/beans05.xml</config>
+		<config>src/main/java/config/beans05-03_old.xml</config>
+		<config>src/main/resources/beans07.xml</config>
+		<config>src/main/java/config/beans08.xml</config>
+		<config>src/main/java/config/beans09.xml</config>
+		<config>src/main/java/config/beans10.xml</config>
+		<config>src/main/java/polymorphism07/beans11.xml</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>
