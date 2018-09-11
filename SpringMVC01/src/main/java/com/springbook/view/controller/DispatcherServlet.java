@@ -44,9 +44,10 @@ public class DispatcherServlet extends HttpServlet {
 	
 	String view =null;
 	
-	if(!viewName.contains(".do")) {
+	//이동할 페이지명이 ~.do인지 확인
+	if(!viewName.contains(".do")) {//~.do가 아닌 경우
 		view=viewResolver.getView(viewName);
-	}else {
+	}else {//~.do인 경우
 		view=viewName;
 	}
    

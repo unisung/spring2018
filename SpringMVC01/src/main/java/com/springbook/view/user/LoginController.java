@@ -2,6 +2,7 @@ package com.springbook.view.user;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.springbook.biz.user.UserVO;
 import com.springbook.biz.user.impl.UserDAO;
@@ -21,6 +22,11 @@ public class LoginController implements Controller {
 		
 		UserDAO dao = new UserDAO();
 		UserVO user = dao.getUser(vo);
+		
+		System.out.println(user.getName());
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("user", user);
 		
 		if(user!=null) {
 			return "getBoardList.do";
