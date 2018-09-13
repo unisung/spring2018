@@ -6,6 +6,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,6 +43,9 @@ public class BoardController {
 	
 	@RequestMapping("/getBoard.do")
 	public String getBoard(BoardVO board, Model model) {
+		//게시글 조회수 증가
+		boardService.updateBoardViewCount(board);
+		//게시글 내용 보기
 		board = boardService.getBoard(board);
 		
 		System.out.println("board.getSeq()="+board.getSeq());
@@ -110,8 +116,10 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/insertBoard.do")
-	public String insertBoard(BoardVO vo) throws IllegalStateException, IOException {
-		String path = "C:\\springWorkspace\\SpringMVCMyBatis\\src\\main\\webapp\\images\\";       
+	public String insertBoard(BoardVO vo,HttpServletRequest request) throws IllegalStateException, IOException {
+		String path = request.getRealPath("images"+"\\");
+		
+		//String path = "C:\\springWorkspace\\SpringMVCMyBatis\\src\\main\\webapp\\images\\";       
 		//파일 업로드 처리
 		MultipartFile uploadFile = vo.getUploadFile();
 		if(!uploadFile.isEmpty()) {
@@ -126,8 +134,10 @@ public class BoardController {
 	}
 
 	@RequestMapping(value="/updateBoard.do",method=RequestMethod.POST)
-	public String updateBoard(@ModelAttribute("board") BoardVO vo) throws IllegalStateException, IOException {
-		String path = "C:\\springWorkspace\\SpringMVCMyBatis\\src\\main\\webapp\\images\\";     
+	public String updateBoard(@ModelAttribute("board") BoardVO vo,HttpServletRequest request) throws IllegalStateException, IOException {
+		String path = request.getRealPath("images"+"\\");
+		//String path = "C:\\springWorkspace\\SpringMVCMyBatis\\src\\main\\webapp\\images\\";     
+		
 		//파일 업로드 처리
 				MultipartFile uploadFile = vo.getUploadFile();
 

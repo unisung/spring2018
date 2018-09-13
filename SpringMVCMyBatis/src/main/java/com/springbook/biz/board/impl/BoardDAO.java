@@ -58,8 +58,8 @@ public class BoardDAO extends SqlSessionDaoSupport {
 		
 	 //조회수 증가
 	public void updateBoardViewCount(BoardVO vo) {
-		System.out.println("===> Mybatis로 updatecntBoard() 기능 처리");
-		getSqlSession().update("Board.updatecntBoard",vo);
+		System.out.println("===> Mybatis로 updateViewCount() 기능 처리");
+		getSqlSession().update("Board.updateViewCount",vo);
 	}
 	
 	/*//글등록

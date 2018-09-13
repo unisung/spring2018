@@ -13,21 +13,23 @@ import com.springbook.biz.board.BoardVO;
 public class BoardServiceImpl implements BoardService {
     //bean중에서 boardDAO로 된 객체를 찾아서 자동으로 주입 어노테이션
 	@Autowired
-/*	private BoardDAO boardDAO;*/
 	private BoardDAO boardDAO;
 	 
+	//게시글 등록
 	@Override
 	public void insertBoard(BoardVO vo) {
      boardDAO.insertBoard(vo);
      //commit, rollback
 	}
 
+	//게시글 내용 수정
 	@Override
 	public void updateBoard(BoardVO vo) {
     boardDAO.updateBoard(vo);
 
 	}
 
+	//게시글 삭제
 	@Override
 	public void deleteBoard(BoardVO vo) throws Exception {
 /*		if(vo.getSeq()==1) {
@@ -37,14 +39,22 @@ public class BoardServiceImpl implements BoardService {
 
 	}
 
+	//게시글 내용보기
 	@Override
 	public BoardVO getBoard(BoardVO vo) {
 		return boardDAO.getBoard(vo);
 	}
 
+	//게시글 리스트
 	@Override
 	public List<BoardVO> getBoardList(BoardVO vo) {
 		return boardDAO.getBoardList(vo);
+	}
+
+	 //조회수 증가
+	@Override
+	public void updateBoardViewCount(BoardVO vo) {
+		boardDAO.updateBoardViewCount(vo);
 	}
 
 }
